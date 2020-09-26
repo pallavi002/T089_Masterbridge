@@ -75,10 +75,7 @@ module.exports.signUp = async(req, res) => {
             res.redirect("/");
         });
 
-}
-
-
-
+};
 
 // Function for Hashing Password
 function genHash(param, callback) {
@@ -93,7 +90,7 @@ function genHash(param, callback) {
             });
         });
     });
-}
+};
 
 module.exports.logout = (req, res) => {
     req.session.destroy();

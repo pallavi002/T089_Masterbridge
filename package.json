@@ -1,32 +1,36 @@
 {
-  "name": "djsce-hackathon",
-  "version": "1.0.0",
-  "description": "��#\u0000 \u0000T\u00000\u00008\u00009\u0000_\u0000M\u0000a\u0000s\u0000t\u0000e\u0000r\u0000b\u0000r\u0000i\u0000d\u0000g\u0000e\u0000\r\u0000 \u0000",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pallavi002/T089_Masterbridge.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pallavi002/T089_Masterbridge/issues"
-  },
-  "homepage": "https://github.com/pallavi002/T089_Masterbridge#readme",
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.5",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "mongoose": "^5.10.7",
-    "morgan": "^1.10.0",
-    "path": "^0.12.7",
-    "shortid": "^2.2.15"
-  }
+    "name": "djsce-hackathon",
+    "version": "1.0.0",
+    "description": "��#\u0000 \u0000T\u00000\u00008\u00009\u0000_\u0000M\u0000a\u0000s\u0000t\u0000e\u0000r\u0000b\u0000r\u0000i\u0000d\u0000g\u0000e\u0000\r\u0000 \u0000",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pallavi002/T089_Masterbridge.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/pallavi002/T089_Masterbridge/issues"
+    },
+    "homepage": "https://github.com/pallavi002/T089_Masterbridge#readme",
+    "dependencies": {
+        "bcrypt": "^5.0.0",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "^1.4.5",
+        "dotenv": "^8.2.0",
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "formidable": "^1.2.2",
+        "fs": "0.0.1-security",
+        "mongoose": "^5.10.7",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.4",
+        "path": "^0.12.7",
+        "shortid": "^2.2.15"
+    }
 }
