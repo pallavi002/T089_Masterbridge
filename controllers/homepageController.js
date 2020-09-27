@@ -46,7 +46,7 @@ module.exports.login = (req, res) => {
         });
 };
 
-module.exports.signUp = async(req, res) => {
+module.exports.signup = async(req, res) => {
     genHash(req.body.password)
         .then(async(result) => {
             const user = new User({
