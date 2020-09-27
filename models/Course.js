@@ -17,9 +17,9 @@ const Course = new mongoose.Schema({
     hours: {
         type: String
     },
-    videos: [{
+    videos: {
         type: String
-    }],
+    },
     students: [{
         userId: {
             type: mongoose.Schema.Types.ObjectId,

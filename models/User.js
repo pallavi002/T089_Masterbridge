@@ -34,6 +34,10 @@ const user = new mongoose.Schema({
     },
     coursesenrolled: {
         type: String
+    },
+    role: {
+        type: String,
+        enum: ["student", "professor"]
     }
 }, { timestamps: true });
 

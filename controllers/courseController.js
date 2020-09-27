@@ -36,7 +36,7 @@ module.exports.createcourse = function(req, res) {
                         description: fields.description,
                         prerequisites: fields.prerequisites,
                         hours: fields.hours,
-                        video: fields.video,
+                        videos: fields.video,
                         uid: fields.userId
                     }
                     console.log("coursedata " + coursedata)
