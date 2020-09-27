@@ -25,6 +25,8 @@ router.get("/createcourse", (req, res) => {
 });
 router.post("/createcourse", courseController.createcourse);
 
+router.post("/enroll/id", homepageController.enroll)
+
 
 router.get("/404", (req, res) => {
     res.render("404");

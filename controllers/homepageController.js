@@ -4,6 +4,8 @@ const bcrypt = require("bcrypt");
 const { render } = require("ejs");
 const saltRounds = 10;
 const shortid = require("shortid");
+const app = require("../app");
+const Course = require("../models/Course");
 
 module.exports.index = (req, res) => {
     res.render("index");
@@ -96,3 +98,25 @@ module.exports.logout = (req, res) => {
     req.session.destroy();
     res.redirect("/");
 };
+
+
+//student enrolled
+module.exports.enroll = async function(req, res, next) {
+    let userId = req.session.user._id;
+    let id = req.params.id;
+    course = {
+            userId: userId
+        }
+        // let comment = req.body.comment;
+    let content = await Course.findOneAndUpdate({ '_id': id }, {
+        $push: {
+            students: course
+        }
+    }, { 'upsert': true, 'new': true, 'multi': true });
+    try {
+        // console.log(content)
+        res.redirect('back');
+    } catch (err) {
+        res.redirect('back');
+    }
+}

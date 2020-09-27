@@ -32,6 +32,9 @@ const user = new mongoose.Schema({
         type: String,
         required: true,
     },
+    coursesenrolled: {
+        type: String
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("User", user);

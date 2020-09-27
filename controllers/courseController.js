@@ -1,5 +1,7 @@
 const app = require("../app");
 const Course = require("../models/Course");
+const User = require('../models/User');
+
 const formidable = require("formidable");
 const fs = require("fs");
 const path = require("path");
@@ -14,7 +16,7 @@ module.exports.createcourse = function(req, res) {
             let newpath = './videos/' + files.video.name;
             fs.readFile(oldpath, function(err, data) {
                 if (err) {
-                    // console.log(err);
+                    console.log(err);
                     res.redirect('back');
                     return;
                 }
@@ -22,15 +24,26 @@ module.exports.createcourse = function(req, res) {
                 // Write the file
                 fs.writeFile(newpath, data, function(err) {
                     if (err) {
-                        // console.log(err);
+                        console.log(err);
                         res.redirect('back');
                         return;
                     }
                     fields.video = 'http://localhost:5000/' + files.video.name;
-                    let course = new Course(fields);
+                    fields.userId = req.session.userObj._id;
+                    console.log(fields.userId)
+                    let coursedata = {
+                        coursename: fields.coursename,
+                        description: fields.description,
+                        prerequisites: fields.prerequisites,
+                        hours: fields.hours,
+                        video: fields.video,
+                        uid: fields.userId
+                    }
+                    console.log("coursedata " + coursedata)
+                    let course = new Course(coursedata);
                     course.save(function(err, result) {
                         if (err) {
-                            // console.log(err);
+                            console.log(err);
                             res.redirect('back');
                         } else {
                             console.log('result' + result);
@@ -62,6 +75,7 @@ module.exports.createcourse = function(req, res) {
         }
     });
 }
+
 
 module.exports.displaycourse = function(req, res) {
     Course.find({}, function(err, courses) {

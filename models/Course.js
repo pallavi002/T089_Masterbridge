@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const Course = new mongoose.Schema({
+    uid: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    },
     coursename: {
         type: String
     },
@@ -13,9 +17,15 @@ const Course = new mongoose.Schema({
     hours: {
         type: String
     },
-    videos: {
+    videos: [{
         type: String
-    }
+    }],
+    students: [{
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        }
+    }],
 }, { timestamps: true });
 
 module.exports = mongoose.model("Course", Course);
