@@ -1,0 +1,23 @@
+.courses {
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+.title{
+    background-color: white;
+    font-size: 3em;
+    color: #32e0c4;
+    padding: 0.2em;
+    margin: 0em;
+}
+.content{
+    display: flex;
+    align-items: center;
+    
+    margin-bottom: 1em;
+}
+.teacher{
+    border-radius: 50%;
+    margin-right: 0.2em;
+}
